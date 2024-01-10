@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="contentbody">
-    <div>
+    <div class="chat-header">
         <h1> {{ room.name }} </h1>
     </div>
 
@@ -12,7 +12,9 @@
         <div id="chat-messages">
             {% for message in messages %}
             <div>
-            <p>{{message.user.username}}</p>
+                <div class="username">
+                    <p>{{message.user.username}}</p>
+                </div>
                 <div class="messagebubble">
                     <p>{{ message.content }}</p>
                 </div>
@@ -54,7 +56,7 @@
 
         if(data.message){
             let html= '<div>';
-                html += '<p>'+data.username +'</p>';
+                html += '<div class="username"> <p>'+data.username +'</p> </div>';
                 html += '<div class="messagebubble"><p>'+data.message+'</p></div></div>';
 
             document.querySelector('#chat-messages').innerHTML += html;
