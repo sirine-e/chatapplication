@@ -8,22 +8,17 @@
         <link rel="stylesheet" href="{% static 'style.css' %}?v=1">
     </head>
     <body>
-        <nav class="navigation">
-            <div>
+        <nav>
             <a href="/"> Djangochat </a>
-            </div>
+            {% if request.user.is_authenticated %}
+            <a class="menu" href="/rooms/">Rooms</a>
 
-            <div>
-                {% if request.user.is_authenticated %}
-                <a href="/rooms/">Rooms</a>
+            <a class="menu" href="/logout/">Log out</a>
+            {% else %}
+            <a href="/login/">Log in</a>
 
-                <a href="/logout/">Log out</a>
-                {% else %}
-                <a href="/login/">Log in</a>
-
-                <a href="/signup/">Sign up</a>
-                {% endif %}
-            </div>
+            <a href="/signup/">Sign up</a>
+            {% endif %}
         </nav>
     
     
