@@ -24,6 +24,9 @@
     
     {% block content %}
     {% endblock %}
+    {% block js %}
+	<script type="text/javascript" src="{% static 'script.js' %}"></script>
+	{% endblock %}
     </body>
     {% block scripts%}
     {% endblock %}

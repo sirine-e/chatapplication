@@ -10,15 +10,15 @@ nav {
 }
 
 .menu {
+    border: 2px solid #E6E6FA;
     margin-left: 100px;
+    border-radius: 17px;
 }
 
 .menu:hover{
-    border: 2px solid lightgray;
-    background-color: lightgray;
-    border-radius:3%;
+    border: 2px solid rgb(250, 247, 247);
+    background-color: rgb(250, 247, 247);
     padding :10px;
-    border-radius: 17px;
 }
 
 * {
@@ -50,7 +50,7 @@ body {
     width: 80%;
 	height:90%;
 	border-radius:3%;
-    background: linear-gradient(to bottom, #778899, #6495ED, #C0C0C0);
+    background-color: aliceblue;
 }
 
 .message-input {
@@ -73,6 +73,10 @@ button {
     color: white ;
     border: none;
     border-radius: 4px;
+}
+
+#EmojiButton {
+    background-color: whitesmoke;
 }
 
 button:hover{
@@ -102,4 +106,23 @@ button:hover{
 }
 .username p{
     font-weight: bold;
+}
+
+.roomscontent {
+    margin-left: 30px;
+}
+
+.roomcontent{
+    border : 1px solid black ;
+    padding: 20px;
+    background-color: aliceblue;
+    margin-top: 20px;
+    margin-right: 200px;
+    border-radius: 10px;
+}
+
+#joinbutton {
+    text-decoration: none;
+    font-weight: bold;
+    color: aliceblue;
 }
