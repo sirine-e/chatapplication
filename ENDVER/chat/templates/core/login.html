@@ -3,25 +3,28 @@
 {% block title %}Log in{% endblock %}
 
 {% block content %}
+    <div class="roomscontent">
     <div>
         <h1> Log in </h1>
     </div>
 
+    <div class="roomcontent">
     <form method="post" action=".">
         {% csrf_token %}
 
         <div>
-            <label>Username</label>
+            <label>Username :</label>
 
             <input type="text" name="username">
         </div>
+        <br>
 
         <div>
-            <label>Password</label>
+            <label>Password :</label>
 
             <input type="password" name="password">
         </div>
-
+        <br>
 
         {% if form.errors %}
             {% for field in form %}
@@ -32,11 +35,13 @@
                 {% endfor %}
             {% endfor %}
         {% endif %}
-
+        <br>
         <button>
             Log in
         </button>
 
     </form>
+</div>
+</div>
 
 {% endblock %}

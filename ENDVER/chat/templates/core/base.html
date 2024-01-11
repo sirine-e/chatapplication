@@ -11,13 +11,20 @@
         <nav>
             <a href="/"><img width="60" src="{% static 'logo.png' %}"/></a>
             {% if request.user.is_authenticated %}
+            <div class="class1"></div>
             <a class="menu" href="/rooms/">Rooms</a>
-            
-            <a class="menu" href="{% url 'logout' %}">Log out</a>
-            {% else %}
-            <a href="/login/">Log in</a>
+            </div>
+            <div class="class2">
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" id="logout" class="menu">Log out</button>
+            </form>
+            </div>
 
-            <a href="/signup/">Sign up</a>
+            {% else %}
+            <a class="menu" href="/login/">Log in</a>
+
+            <a class="menu" href="/signup/">Sign up</a>
             {% endif %}
         </nav>
     
