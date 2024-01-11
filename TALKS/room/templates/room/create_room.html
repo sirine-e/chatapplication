@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% load static%}
+
+{% block content %}
+<div class="roomscontent">
+  <h2>Create a new room</h2>
+  <div class="roomcontent form">
+  <form method="post">
+    {% csrf_token %}
+    <!--{{ form.as_p }}-->
+    <label for="{{ form.name.id_for_label }}">Name:</label>
+    {{ form.name }}
+    <br>
+    <br>
+    <label for="{{ form.slug.id_for_label }}">Slug:</label>
+    {{ form.slug }}
+    <br>
+    <br>
+    {% if form.errors %}
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div>
+                            <p>{{ error|escape }}</p>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+    {% endif %}
+    <br><br>
+    <button type="submit">Create the room</button>
+  </form>
+  </div>
+</div>
+{% endblock %}

@@ -11,6 +11,11 @@ nav {
     font-weight: bold;
 }
 
+#newroom {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
 .menu {
     border: 2px solid #fff;
     margin-left: 100px;
@@ -66,6 +71,7 @@ body {
 	height:90%;
 	border-radius:3%;
     background-color: aliceblue;
+    margin-bottom: 60px;
 }
 
 .message-input {
@@ -116,10 +122,6 @@ button:hover{
     padding: 10px;
     width:100%;
 }
-
-/*.messagebubble p{
-    color:blueviolet;
-}*/
 
 .messagebubble {
 
