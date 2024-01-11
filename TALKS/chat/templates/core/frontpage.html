@@ -4,16 +4,16 @@
 {% block title %}Welcome{% endblock %}
 
 {% block content %}
-    <div class="roomscontent">
-        <h1> Talks </h1>
-        <div class="roomcontent">
-            <p>Welcome to our chat application !</p>
-            <br>
-            {% if request.user.is_authenticated %}
-            <button onclick="window.location.href='/rooms/'"> Access the rooms </button>
-            {% else %}
-            <button onclick="window.location.href='/login/'"> Login </button>
-            {% endif %}
-        </div>
+<div class="roomscontent">
+    <h1> Talks </h1>
+    <div class="roomcontent">
+        <p>Welcome to our chat application !</p>
+        <br>
+        {% if request.user.is_authenticated %}
+        <button onclick="window.location.href='/rooms/'"> Access the rooms </button>
+        {% else %}
+        <button onclick="window.location.href='/login/'"> Login </button>
+        {% endif %}
     </div>
+</div>
 {% endblock %}

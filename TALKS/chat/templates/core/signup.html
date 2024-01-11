@@ -9,43 +9,43 @@
     </div>
 
     <div class="roomcontent">
-    <form method="post" action=".">
-        {% csrf_token %}
+        <form method="post" action=".">
+            {% csrf_token %}
 
-        <div>
-            <label>Username :</label>
+            <div>
+                <label>Username :</label>
 
-            <input type="text" name="username">
-        </div>
-        <br>
-        <div>
-            <label>Password :</label>
+                <input type="text" name="username">
+            </div>
+            <br>
+            <div>
+                <label>Password :</label>
 
-            <input type="password" name="password1">
-        </div>
-        <br>
-        <div>
-            <label>Repeat password :</label>
+                <input type="password" name="password1">
+            </div>
+            <br>
+            <div>
+                <label>Repeat password :</label>
 
-            <input type="password" name="password2">
-        </div>
-        <br>
-        {% if form.errors %}
-            {% for field in form %}
-                {% for error in field.errors %}
-                    <div>
-                        <p>{{ error|escape }}</p>
-                    </div>
+                <input type="password" name="password2">
+            </div>
+            <br>
+            {% if form.errors %}
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div>
+                            <p>{{ error|escape }}</p>
+                        </div>
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
-        {% endif %}
-        <br>
-        <button>
-            Submit
-        </button>
+            {% endif %}
+            <br>
+            <button>
+                Submit
+            </button>
 
-    </form>
-</div>
+        </form>
+    </div>
 </div>
 
 {% endblock %}

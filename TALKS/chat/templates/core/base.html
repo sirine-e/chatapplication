@@ -12,28 +12,24 @@
             <a href="/"><img width="70" src="{% static 'logotrue.png' %}"/></a> 
             {% if request.user.is_authenticated %}
             <div class="class1"></div>
-            <a class="menu" href="/rooms/">Rooms</a>
+                <a class="menu" href="/rooms/">Rooms</a>
             </div>
             <div class="class2">
-            <form method="post" action="{% url 'logout' %}">
-                {% csrf_token %}
-                <button type="submit" id="logout" class="menu">Log out</button>
-            </form>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" id="logout" class="menu">Log out</button>
+                </form>
             </div>
-
             {% else %}
             <a class="menu" href="/login/">Log in</a>
-
             <a class="menu" href="/signup/">Sign up</a>
             {% endif %}
         </nav>
-    
-    
-    {% block content %}
-    {% endblock %}
-    {% block js %}
-	<script type="text/javascript" src="{% static 'script.js' %}"></script>
-	{% endblock %}
+        {% block content %}
+        {% endblock %}
+        {% block js %}
+        <script type="text/javascript" src="{% static 'script.js' %}"></script>
+        {% endblock %}
     </body>
     {% block scripts%}
     {% endblock %}
