@@ -4,7 +4,12 @@
 {% block title %}Welcome{% endblock %}
 
 {% block content %}
-    <div>
-        <h1> Djangochat </h1>
+    <div class="roomscontent">
+        <h1> Talks </h1>
+        <div class="roomcontent">
+            <p>Welcome to our chat application !</p>
+            <br>
+            <button onclick="window.location.href='/rooms/'"> Access the rooms </button>
+        </div>
     </div>
 {% endblock %}
