@@ -11,10 +11,11 @@
     {{ form.name }}
     <br>
     <br>
-    <label for="{{ form.slug.id_for_label }}">Slug:</label>
+    <label for="{{ form.slug.id_for_label }}">Chatname:</label>
     {{ form.slug }}
     <br>
     <br>
+    <p style="color : rgb(183,183,183);">This field will be used for the url</p>
     {% if form.errors %}
                 {% for field in form %}
                     {% for error in field.errors %}
