@@ -1,10 +1,11 @@
 document.getElementById('EmojiButton').addEventListener('click', function (event) {
-    event.preventDefault();//eviter que la page se recharge a chaque clic sur le bouton
+    event.preventDefault();//Avoid the page reloading on click
     pickEmoji();
 });
 
 function pickEmoji(){
     var EmojiPicker = document.getElementById('EmojiPicker');
+    //If display is 'block' change it to 'none', else change to 'block'
     EmojiPicker.style.display = (EmojiPicker.style.display === 'block') ? 'none' : 'block';
 }
 

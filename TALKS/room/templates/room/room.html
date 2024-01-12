@@ -1,4 +1,4 @@
-{% extends 'core/base.html' %}
+{% extends 'chat/base.html' %}
 {% load static%}
 {% block title %} {{ room.name }} | {% endblock %}
 
@@ -134,8 +134,6 @@
     chatSocket.onclose = function(e){
         console.log('onclose')
     }
-
-    //
 
     document.querySelector('#chat-message-submit').onclick = function(e){
         e.preventDefault();

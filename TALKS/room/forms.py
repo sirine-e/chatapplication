@@ -6,6 +6,7 @@ class RoomCreationForm(forms.ModelForm):
         model = Room
         fields = ['name', 'slug']
 
+    #Avoid having two slugs with the same name
     def clean_slug(self):
         slug = self.cleaned_data['slug']
         if Room.objects.filter(slug=slug).exists():

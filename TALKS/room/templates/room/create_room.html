@@ -1,13 +1,12 @@
-{% extends 'core/base.html' %}
+{% extends 'chat/base.html' %}
 {% load static%}
-
+{% block title %} Create a room {% endblock %}
 {% block content %}
 <div class="roomscontent">
   <h2>Create a new room</h2>
   <div class="roomcontent form">
   <form method="post">
     {% csrf_token %}
-    <!--{{ form.as_p }}-->
     <label for="{{ form.name.id_for_label }}">Name:</label>
     {{ form.name }}
     <br>
