@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
 from .forms import RoomCreationForm
 from .models import Room, Message
 
@@ -33,3 +34,8 @@ def create_room(request):
         form = RoomCreationForm()
 
     return render(request, 'room/create_room.html', {'form': form})
+
+
+def user_list(request):
+    users = User.objects.all()
+    return render(request, 'user_list.html', {'users': users})
