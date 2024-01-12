@@ -5,7 +5,7 @@ pip install daphne <br>
 pip install django <br>
 <br>
 <br>
-A faire dans djangochat/djangochat/ 
+A faire dans djangochat/djangochat/ <br>
 python manage.py runserver
 <br>
 <br>
