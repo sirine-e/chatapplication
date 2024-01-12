@@ -13,7 +13,7 @@
             {% if request.user.is_authenticated %}
             <div class="class1"></div>
                 <a class="menu" href="/rooms/">Rooms</a>
-                <a class="menu" href="/rooms/">Users</a>
+                <a class="menu" href="/rooms/user_list/">Users</a>
             </div>
             <div class="class2">
                 <form method="post" action="{% url 'logout' %}">

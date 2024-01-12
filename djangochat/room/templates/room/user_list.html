@@ -1,14 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>User List</title>
-</head>
-<body>
-    <h1>User List</h1>
-    <ul>
+{% extends 'chat/base.html' %}
+{% load static%}
+{% block title %}Users List{% endblock %}
+
+{% block content %}
+<div class="roomscontent">
+    <h1>Users List</h1>
+    <div class="roomcontent">
         {% for user in users %}
-            <li>{{ user.username }}</li>
+            <div class="messagebubble">{{ user.username }}
+                {{user.}}
+            </div>
         {% endfor %}
     </ul>
-</body>
-</html>
+    </div>
+</div>
+{% endblock %}

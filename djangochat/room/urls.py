@@ -6,5 +6,5 @@ urlpatterns = [
     path('', views.rooms, name='rooms'),
     path('room/<slug:slug>/', views.room, name='room'),
     path('create_room/', create_room, name='create_room'),
-    path('user-list/', user_list, name='user_list'),
+    path('user_list/', user_list, name='user_list'),
 ]

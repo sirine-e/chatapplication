@@ -38,4 +38,4 @@ def create_room(request):
 
 def user_list(request):
     users = User.objects.all()
-    return render(request, 'user_list.html', {'users': users})
+    return render(request, 'room/user_list.html', {'users': users})
