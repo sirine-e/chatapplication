@@ -24,7 +24,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
             self.channel_name
         )
 
-    # Receive message from WebSocket
+    # Receive message from websocket
     async def receive(self, text_data):
         data = json.loads(text_data)
         print(data)
@@ -49,7 +49,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         message = event['message']
         username = event['username']
 
-        # Send message to WebSocket
+        # Send message to websocket
         await self.send(text_data=json.dumps({
             'message': message,
             'username': username

@@ -26,12 +26,14 @@
     <div class="message-input">
         <form method="post" action=".">
             <input type="text" name="content"placeholder="Your message..." id="chat-message-input">
+            <!-- The emoji picker button click to change the display from 'none' to 'block'-->
             <button id="EmojiButton">
                 <img width="14" src="{% static 'emoji.png' %}"/>
             </button>
             <button id="chat-message-submit">Submit</button>
         </form>
     </div>
+    <!-- The emoji picker hidden division-->
     <div id="EmojiPicker" style="display:none;">
         <span onclick="addEmoji('🌟')">🌟</span>
         <span onclick="addEmoji('❤️')">❤️</span>
