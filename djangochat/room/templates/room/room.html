@@ -104,8 +104,12 @@
 
 
 <script>
+
+     // Extract room name and username from the JSON script elements
     const roomName = JSON.parse(document.getElementById('json-roomname').textContent);
     const userName = JSON.parse(document.getElementById('json-username').textContent);
+
+     // Establish WebSocket connection to the chat server
     const chatSocket = new WebSocket(
         'ws://'
         + window.location.host
@@ -114,39 +118,50 @@
         + '/'
     );
 
+    // Handle incoming messages from the WebSocket
     chatSocket.onmessage = function(e){
         console.log('onmessage')
 
+        // Parse the incoming JSON data
         const data = JSON.parse(e.data);
 
+         // Check if the message field is present in the data
         if(data.message){
+            // Construct HTML for displaying the message
             let html= '<div>';
                 html += '<div class="username"> <p>'+data.username +'</p> </div>';
                 html += '<div class="messagebubble"><p>'+data.message+'</p></div></div>';
-
+            
+            // Append the HTML to the chat-messages container
             document.querySelector('#chat-messages').innerHTML += html;
             
         }else{
+            // Display an alert if the message is empty
             alert('The message was empty!');
         }
     }
 
+    // Handle the WebSocket connection closure
     chatSocket.onclose = function(e){
         console.log('onclose')
     }
 
+    // Handle click event on the chat message submit button
     document.querySelector('#chat-message-submit').onclick = function(e){
         e.preventDefault();
 
+        // Get the message input from the DOM
         const messageInputDom =document.querySelector('#chat-message-input');
         const message = messageInputDom.value;
 
+        // Send the message to the server in JSON format
         chatSocket.send(JSON.stringify({
             'message': message,
             'username': userName,
             'room': roomName
         }))
 
+        // Clear the message input field
         messageInputDom.value = '';
 
         return false;
