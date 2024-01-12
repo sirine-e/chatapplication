@@ -1,8 +1,8 @@
 Installations 
 <br>
-pip install channels 
-pip install daphne
-pip install django
+pip install channels <br>
+pip install daphne <br>
+pip install django <br>
 <br>
 <br>
 A faire dans djangochat/djangochat/ 
